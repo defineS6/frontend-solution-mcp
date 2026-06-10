@@ -14,15 +14,35 @@
 | `FRONTEND_MCP_PROXY_URL` | 否 | HTTP/HTTPS 代理地址，例如 `http://127.0.0.1:7890`；不填则直连 |
 | `FRONTEND_MCP_TIMEOUT` | 否 | 请求超时时间，默认 `120s`，例如 `60s`、`2m` |
 
+## 安装
+
+Windows 用户可以直接安装 Release 二进制，不需要本地 Go 环境：
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://raw.githubusercontent.com/defineS6/frontend-solution-mcp/main/install.ps1 | iex"
+```
+
+默认安装到：
+
+```text
+%LOCALAPPDATA%\Programs\frontend-solution-mcp\frontend-mcp.exe
+```
+
+如果目标文件已存在，脚本会跳过下载；需要覆盖更新时可以使用：
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "& ([scriptblock]::Create((irm https://raw.githubusercontent.com/defineS6/frontend-solution-mcp/main/install.ps1))) -Force"
+```
+
 ## MCP 示例
 
-本地构建后使用：
+安装二进制后使用：
 
 ```json
 {
   "mcpServers": {
     "frontend-mcp": {
-      "command": "frontend-mcp",
+      "command": "C:\\Users\\你的用户名\\AppData\\Local\\Programs\\frontend-solution-mcp\\frontend-mcp.exe",
       "env": {
         "FRONTEND_MCP_BASE_URL": "https://api.example.com/v1",
         "FRONTEND_MCP_API_KEY": "你的 key",
