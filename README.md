@@ -118,3 +118,12 @@ powershell -ExecutionPolicy Bypass -c "& ([scriptblock]::Create((irm https://raw
 go test ./...
 go build -o frontend-mcp .
 ```
+
+## 致谢
+- [SGuDaStudio/geminimcp](https://github.com/GuDaStudio/geminimcp/)
+- [linux.do](https://linux.do) 社区
+- 开源 API 代理生态
+
+## License
+
+MIT
